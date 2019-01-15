@@ -1,0 +1,203 @@
+
+<!-- saved from url=(0070)http://www.cs.ucsb.edu/~almeroth/classes/W19.176B/hw/w19-176-hw-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head><body><div id="StayFocusd-infobar" style="display: none; top: 1424.5px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div><h2 align="center">CS176B - HOMEWORK ASSIGNMENT #1<br>
+<strong>Due:  January 27, 2019 (By 11:59pm)</strong></h2><p></p>
+
+<h3>Objectives</h3>
+<ul>
+This homework is designed to have you explore some of the tools we
+discussed in class to better understand the network to which you are
+connected.  
+<p></p></ul>
+
+
+<h3> Assignment Details</h3>
+<ul>
+All of these tools should be available on any machine running a UNIX-based
+operating system, i.e. the machines in CSIL.  Many are also available on non-UNIX machines, but the syntax may vary.  You will want to make 
+extensive use of the <i>man pages</i> for each command (either via the command line or via the Internet).<p>
+
+</p><h4>A. ifconfig or ipconfig</h4>
+
+<ol>
+	<li> Determine the network interface configuration of the machine you are using (e.g., "<i>ifconfig -a</i>" or "<i>ipconfig /all</i>").  Capture the
+output (screenshot) and include it as part of your answer.  Identify and explain as much of 
+what is printed as you can.
+
+</li><li> Using the "<i>ip</i>" command in Unix, what command would you enter to get similarly detailed information? For example, "ip xxxxx"
+<p>
+</p></li></ol>
+
+<h4>B. ARP</h4>
+
+<ol>
+<li> Run "<i>arp -a</i>" on your machine.  Capture 
+the output (screenshot) and include it as part of your answer.  Explain each part of what is printed.<p>
+
+</p></li><li> If you try to use the <i>arp</i> command to add or delete an entry to the 
+ARP table, what happens? Why do you suppose this the case?<p>
+
+</p></li><li> There is another indirect way of affecting the contents of the ARP table.
+How can you affect (either add, delete, or change) entries in the ARP table? 
+Use this mechanism to add at least two new hosts to the ARP table and capture
+the output (screenshot) of the new ARP table and include it as part of your answer.<p>
+
+</p></li><li> How long do entries stay cached in the ARP table?  Describe a
+trail-and-error method to discover the timeout value.<p>
+
+</p></li><li> How is the output of "<i>arp -a</i>" different from "<i>ip neighbor</i>"?
+<p>
+
+</p></li><li> What will happen if two different IP addresses assigned to each of two different hosts both map to the same Ethernet address?
+Be specific on how hosts on the subnet operate and respond.<p>
+
+</p></li></ol>
+
+<h4>C. traceroute</h4>
+
+<ol>
+<li> Explain in detail how <i>traceroute</i> works.<p>
+
+</p></li><li> Perform a <i>traceroute</i> from your machine to <i>jnto.org.au</i>. Include a copy
+of the output and explain what happened including a description of what
+each of the fields means.<p>
+
+</p></li><li> Perform some other <i>traceroutes</i>.  Include a copy of the traceroute that completed successfully and had the most number of hops.
+<p>
+
+</p></li><li> Here's the challenge for this question:  we want to traceroute to a 
+non-existent machine outside
+of UCSB.  The first problem is how do we KNOW that a particular machine does
+not exist?  If we just pick an IP address and <i>ping</i> it, why is that
+not sufficient?<p>
+
+</p></li><li> Determine an IP address for a machine that you know definitely does not exist (but is still a valid public IP address in the Class A, B, or C range).  Explain how you determined that the IP address you chose is not being used.
+Do a <i>traceroute</i> to that machine.  Include a copy of the result.<p>
+
+</p></li><li> Identify a completely different (for all four parts of the IP address) IP address for a non-existent
+machine.  Do a traceroute to this machine.  Include a copy of this result.<p>
+
+</p></li><li> Repeat the above exercise (but you don't have to include traceroutes to
+more than two machines in your writeup) enough times so you can detect a 
+pattern about what is happening.  What pattern exists and why?<p>
+
+</p></li><li> What is <i>tracepath</i> and how is it different than <i>traceroute</i>?
+
+</li></ol>
+
+<h4> D. Router Looking Glass</h4>
+<ol>
+
+<li>Use "http://alice.ja.net" to show the route from this router (from the drop-down menu) to UCSB (resolve the domain and provide its IP as the argument).  Explain as much of the output as possible--use Google to learn about the information displayed.
+<p>
+
+</p></li><li>Use "http://alice.ja.net" to perform a traceroute to 128.111.1.1.  Include a copy of the output.
+</li></ol>
+
+
+<h4> E. netstat (or ss)</h4>
+
+<ol>
+
+<li> What is <i>netstat</i> (or ss) and what is it used for?<p>
+
+</p></li><li> What parameters for <i>netstat</i> (or <i>ss</i>) should you use to show all the TCP 
+connections established? Include a printout of this list for your machine.
+Be sure to explain what all fields are.<p>
+
+</p></li><li> What option of <i>netstat</i> (or <i>ss</i>) can be used to display network interface status? 
+By using <i>netstat</i> (or <i>ss</i>), figure out the number of interfaces
+on your machine.  In the output you will find an interface named "<i>lo0</i>"
+as a loopback interface. What is this interface, and what are some of the ways it is useful?<p>
+</p></li></ol>
+
+<h4>F. nslookup (or dig)</h4>
+
+<ol>
+
+<li> What is the IP address for the machine <i>cs.princeton.edu</i>?<p>
+
+</p></li><li> What <i>local</i> DNS server is this information coming from? How does your computer know to
+use this DNS server?  <p>
+
+</p></li><li> Here is the problem: I want to find the IP address of where my email 
+to "<i>somebody@hotmail.com</i>" goes. What you really need to do is find the 
+<i>mail exchanger</i>
+for <i>hotmail.com</i>. There is an option in <i>nslookup</i> (or <i>dig</i>) that tells you what the mail
+exchanger is for <i>hotmail.com</i>. Figure out the exact syntax of the format of
+this command, and execute it. Now what is the IP address of where my email
+to <i>hotmail.com</i> goes?<p>
+
+</p></li></ol>
+
+<h4>G. whois</h4>
+<ol>
+
+<li> Who is the administrative contact for the ucsb.edu network?
+<p>
+
+</p></li><li> The host "<i>morticia.cc.gatech.edu</i>" is not in the whois database, but its IP address is.  What is the address of the organization that manages this machine?
+<p>
+
+</p></li><li> If the host "<i>wave3.mit.edu</i>" is being used to attack my machine.  Who should I call and what is their phone number?<p>
+
+</p></li><li> Like the hotmail example, I have another friend I send email to at gmail.
+Her email address is "<i>something@gmail.com</i>"  What can you say about
+the coordinator for the gmail network, i.e. contact info, etc?
+Include information about the steps you took and the
+results of the queries you made to figure out this information.<p>
+
+</p></li><li> What company owns IP address 198.182.196.56?   What machines act
+as the DNS nameserver for the domain that 198.182.196.56 is in?<p>
+</p></li></ol>
+
+<h4>H. Misc</h4>
+
+<ol>
+
+<li> Do a DNS lookup for whitehouse.gov?  What IP address is returned?  If you enter
+that IP address into the browser bar of a browser, what happens?<p>
+
+</p></li><li> If you enter "whitehouse.gov" into the browser bar of a browser, what happens?  Explain
+any differences between what happened in the previous question and for this question.<p>
+
+</p></li><li> To whom is the appropriate person to send abuse complaints related to whitehouse.gov's
+web site?  Comment on the domain of this person's IP address.<p>
+
+</p></li><li> To whom is the appropriate person to send abuse complaints related to whitehouse.gov's
+email system?  Comment on the domain of this person's IP address.<p>
+
+</p></li></ol>
+
+</ul>
+
+
+
+<h3><span>Assignment Turnin</span></h3>
+<ul>
+The assignment should be submitted using the course GauchoSpace site.
+Note:  the 
+turnin time on GauchoSpace is set to 12:00am of the next day.  Do not be
+confused by this one minute difference--the assignment is due at the end 
+of the day listed at the top of the assignment.
+<p>
+NOTE:  make sure your name appears <i>in</i> the file you submit, not just in the file name.
+</p></ul>
+
+<h3><span>Cheating Policy </span></h3>
+    <ul>
+    This assignment is to be done individually. Cheating will not be tolerated. Please read the <a href="http://www.sa.ucsb.edu/regulations/"><i>UCSB
+Academic Code of Conduct</i></a>
+to find out more about Student Conduct and Discipline.
+</ul>
+
+
+</body></html>

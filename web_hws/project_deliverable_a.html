@@ -1,0 +1,242 @@
+
+<!-- saved from url=(0072)http://www.cs.ucsb.edu/~almeroth/classes/W19.176B/hw/w19-176-proj-a.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head><body><div id="StayFocusd-infobar" style="display: none; top: 0px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div><h2 align="center">CS176B - PROJECT DELIVERABLE #A <br>
+<strong>Due:  January 20, 2019 (By 11:59pm)</strong></h2><p></p>
+
+<h3>Objectives</h3>
+<ul>
+Part of the focus of this class is to do a fair amount of network
+programming.  However, instead of simply picking a particular project
+for everyone to pursue, I'm turning this into a modestly open-ended
+project.  
+<p>
+
+The objective of this assignment is to have you develop a project
+proposal, the first part for your quarter project.  Based on your ideas, 
+you are to write up a description of a proposal sufficient that the TA and I can
+provide feedback on:  (i) the creativity of the idea, (ii) the feasibility
+of the idea, and (iii) potential pitfalls in executing the project
+plan.
+</p></ul>
+
+
+<h3> Assignment Details</h3>
+<ul>
+
+The project is intended to be as open-ended and flexible as possible given
+the constraints of a 10 week quarter.  The idea is to give you the opportunity 
+to explore a particular topic of interest and as a way to think more deeply 
+about the topics we will cover this quarter. 
+<p>
+
+As described above in the goals, the TA and I need to see sufficient detail
+to be able to evaluate the quality of your idea and its feasibility.
+Further, the more you plan up front, the less uncertainty there will
+be when it comes to implementing your ideas.  That said, every proposal is just that:  a
+proposal.  No doubt at least someone (or some team) will run into issues that will require
+a change of plans.  NOTE:  changes to the proposal will not negatively affect 
+your grade if you are able to sufficiently explain what happened.
+</p><p>
+
+We will talk about project ideas in class, but let me provide a few ideas to
+get your started.  These include:
+
+</p><ul>
+	<li> An application-layer protocol of some sort, for example, 
+some kind of registration server to support coordination required by an
+application.  For example, multi-player games use a server to ping
+clients for network performance in deciding how to group game players.
+This project would require designing a protocol header and then deciding
+what kind of information to exchange.
+
+</li><li> An idea that would require a similar kind of implementation would
+	be to develop some new version of TCP reliability or congestion control.
+
+</li><li> Moving of the protocol stack, you can also implement any of a wide
+	variety of applications.  For example, a secure chat application that
+	uses some of the security concepts we will learn about in class.  Another
+	option is to build a streaming media server where your focus is on 
+	the streaming protocol and buffer management.
+
+</li><li> Implement a bundle protocol for relaying content in a Disruption
+	Tolerant Network (DTN) scenario.
+
+</li><li> Implement a proxy server where your project implementation
+	receives packets, manipulates them in some way, and then
+	forwards them along a network link.  You can use an idea
+	like this to implement a basic firewall, a network
+	emulator (for example, by introducing delay, loss, and jitter),
+	some sort of network-based man-in-the-middle attack, your
+	own version of a NAT gateway, or an encapsulation protocol to
+	provide encryption similar to what IPSec does.
+</li></ul>
+<br>
+
+This list is intended only to get you started.  Any idea is fair game
+as long as it allows you to (1) demonstrate network programming concepts,
+(2) learn some new aspect of network programming, and (3) successfully
+create a deliverable that shows the TA and me successful application of
+the concepts we are studying in class.
+<p>
+</p></ul>
+
+<h3> Overview of Project Milestones/Deliverables</h3>
+<ul>
+
+As part of the project planning process and to briefly give you
+some insight into how the project is structured, first keep in mind
+that there will be three deliverables:  (1) this project proposal,
+(2) a midterm project report, and (3) a
+final project report.  Over the first couple of lectures and in the
+discussion sections taught by Paul, we will be providing
+additional detail.
+<p>
+
+The midterm project report will be an update to this project
+proposal but with more details about what you are doing and
+an update on what you have accomplished so far.
+</p><p>
+
+The final deliverable will include the source code for your
+project.  But understand that even with programming projects, source 
+code is typically not the only deliverable.  For example, if you were
+working at a company, you would do more than just send your boss
+a gzip of source code files.  You would (and will) want to include a 
+report.
+</p><p>
+
+We will talk more about what you can include that has the best
+chance of helping us understand your project, but it is worth
+thinking about some of its high-level aspects now.  
+Also consider that at least some projects
+will have an aspect beyond source code.  For example, 
+there is a on "performance evaluation."  If you have a project
+that seeks to answer a particular question (e.g., is my TCP
+congestion control algorithm better than New Reno?), you may
+need to include performance graphs and some additional analysis.
+Give some thought to what you will deliver at the end of the quarter
+for us to grade.  
+</p><p>
+</p></ul>
+
+<h3>Project Proposal Details</h3>
+<ul>
+In terms of what you need to submit for this first project plan, it
+needs to include more than just a description of
+what you want to do.  In many instances, it also requires some 
+investigation or research to determine if your ideas are feasible.
+For example, if you wish to implement a basic version of TCP 
+congestion control, you will need to investigate whether
+you have the platform (and permissions)
+to develop such a project.
+If you are interested in implementing a YouTube-style buffer management
+scheme, you first have to gather information on how YouTube-style
+buffer management works (preferably beyond simply observing how it
+works).  As part of your project plan, you will want to include a
+description of what investigation you have done.
+<p>
+
+One of the issues you will want to address in your
+proposal is the idea of "incremental deliverables" in order to avoid a failure
+to complete the assignment.  In the end, you will not be
+penalized for failure to fully complete a project that was more
+difficult than envisioned, but you will need to demonstrate a deep
+commitment of time to executing your plan.  One particularly effective
+way of demonstrating this commitment is to show incremental
+progress.  Using the TCP congestion control implementation project as an 
+example, the goal should not be an all-or-nothing effort, but the demonstration 
+of at least partial success will show what you were able to accomplish
+and what caused a lack of further progress.
+</p><p>
+
+Projects can be done individually or in groups of two.  While a group size
+of 2 is not a strict limit, anything larger than 2 will have to be well
+justified.  The project proposal will need to provide a justification for
+a group of more than two students, but I would strongly encourage you to
+contact me soon if you are thinking of having a project team with more than
+two members.
+</p><p>
+
+<b>Misc Note</b>:  I do not mind overlapping this project with a
+project from another class (e.g., CS 189A/B).  But the project
+must fit within the requirements of this course, and you must
+outline in your proposal how what you are doing for this class is
+above and beyond (or simply different) than the other class, i.e., 
+no 100% overlap.
+</p><p>
+
+</p></ul>
+
+<h3> Specific Project Proposal Deliverable</h3>
+<ul>
+
+To be specific, while your project proposal can take any form you wish
+(as long as it gets the job done of describing your idea), the
+following summarizes what I think are the important parts:
+
+<ul>
+<li> Title
+</li><li> Project Member(s):  remember to include a justification if you
+want 3 group members (&gt;3 not allowed unless you think you have a
+stupendous justification).
+</li><li> Project Description:  including supporting evidence of your
+feasibility investigation as described above.  For information
+sources on which you rely to develop your project, include 
+a bibliography and citations.
+</li><li> Deliverables:  what you expect to turn in
+</li><li> Timeline:  timeline of tasks
+</li></ul>
+<p>
+
+Finally, as for project ideas, if you find yourself
+struggling, email me with what thoughts you do have--or come to office
+hours.  Do it sooner rather than later.  In addition to my help, you
+will want to communicate with Paul.  He will be providing feedback
+and doing the grading.  Ensure that he has a good understanding of
+your goals, and eventually, what you have accomplished.
+</p><p>
+</p></ul>
+
+<h3>Assignment Turnin</h3>
+<ul>
+The assignment should be submitted using the course GauchoSpace site.
+Note: the turnin time on GauchoSpace is set to 12:00am of the day
+after assignment is due, but note this is a difference of 1 minute:
+11:59pm of one day and 12:00am of the next.  Do not be confused by 
+this one minute difference--the assignment is due at the end of the 
+day listed at the top of the assignment. 
+<p>
+
+Your project proposal should be turned in as a single file that should
+be PDF unless you have a really, really good reason not to.
+If you have a project group, <i>only one</i>
+group member should turn in an assignment.</p><p>
+</p></ul>
+
+<h3><span>Cheating Policy </span></h3>
+    <ul>
+Despite my own inability to figure out how to cheat on this 
+assignment, someone might spend the energy to try and do so.  But be 
+warned, I take cheating very seriously, and any such attempt will not
+be tolerated. 
+Please read the <a href="http://www.sa.ucsb.edu/regulations/"><i>UCSB
+		                Academic Code of Conduct</i></a>
+to find out more about Student Conduct and Discipline. As always,
+if there is something that might be interpreted as cheating, ask
+questions in advance.  Also as always, any materials on which you
+rely for ideas or as part of an implementation should be properly
+cited.
+</ul>
+
+
+
+
+</body></html>
