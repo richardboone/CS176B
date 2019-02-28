@@ -18,14 +18,15 @@ else:
 
 
 packet_sizes = [100, 200, 400, 600, 800, 1000, 1200, 1500]
-loss_rates = [0.005, 0.01, 0.02, 0.04, 0.08, 0.12, 0.16, 0.25, 0.36, 0.49, 0.64]
+loss_rates = [0.005, 0.01, 0.02, 0.04, 0.08, 0.12, 0.16, 0.25, 0.36, 0.49, 0.64, 0.80]
 
 
 #packet settings
 packet_size = 300     #bytes
-loss_rate = 0.01
+loss_rate = 0.10
 # drop_setting = ADD_ZEROES
 zero_bytes = bytes([0x00]*1000)
+print(zero_bytes)
 # print(zero_bytes)
 outdata = bytes()
 finoutdata = bytes()
@@ -61,8 +62,12 @@ if (drop_setting != 4):
 		else:
 			if(drop_setting == ADD_ZEROES):
 				outdata += zero_bytes
+				print(outdata)
 			elif(drop_setting == DUP_SAMPLE):
-				outdata += bytes(prev_packet[packet_size-1] * packet_size)
+				outdata += bytes([prev_packet[packet_size-1]] * packet_size)
+				print(outdata)
+				print(prev_packet[packet_size-1])
+				# print( bytes([prev_packet[packet_size-1]] * packet_size))
 				prev_packet = prev_packet
 			elif(drop_setting == DUP_PACKET):
 				outdata += prev_packet
@@ -87,6 +92,7 @@ else:
 				outfile.setnframes(nframes)
 				outdata = bytes()
 				finoutdata = bytes()
+				zero_bytes = bytes([0x00]*psize)
 				for i in range(0, nframes, psize):
 					packet = infile.readframes(psize)
 					someval = random.random()
@@ -103,7 +109,7 @@ else:
 						if(drop_setting == ADD_ZEROES):
 							outdata += zero_bytes
 						elif(drop_setting == DUP_SAMPLE):
-							outdata += bytes(prev_packet[len(prev_packet)-1] * psize)
+							outdata += bytes([prev_packet[len(prev_packet)-1]] * psize)
 							prev_packet = prev_packet
 						elif(drop_setting == DUP_PACKET):
 							outdata += prev_packet
